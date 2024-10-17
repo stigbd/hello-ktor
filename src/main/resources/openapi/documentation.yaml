@@ -1,0 +1,40 @@
+openapi: "3.0.3"
+info:
+  title: "Hello Ktor API"
+  description: "A simple API implemented by Ktor to say hello"
+  version: "1.0.0"
+servers:
+  - url: "http://localhost:8080"
+paths:
+  /:
+    get:
+      description: "Root endpoint"
+      responses:
+        "200":
+          description: "Returns a greeting message"
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/Hello"
+  /liveness:
+    get:
+      description: "Liveness probe"
+      responses:
+        "200":
+          description: "Service is alive"
+  /readiness:
+    get:
+      description: "Readiness probe"
+      responses:
+        "200":
+          description: "Service is ready"
+components:
+  schemas:
+    Hello:
+      type: object
+      properties:
+        message:
+          type: string
+          description: "The message to say hello"
+      required:
+        - message

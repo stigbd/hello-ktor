@@ -14,3 +14,11 @@ In another terminal, run the following command:
 ```zsh
 % ./gradlew run
 ```
+
+## Testing the application
+
+You can test the application by running the following command:
+
+```zsh
+% curl http://localhost:8080
+```

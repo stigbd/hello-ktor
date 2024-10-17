@@ -37,3 +37,6 @@ out/
 
 # .kotlin folder should not be included
 .kotlin
+
+# docs folder should not be included
+docs/
