@@ -1,14 +1,14 @@
 val kotlinVersion: String by project
 val logbackVersion: String by project
+val ktorVersion: String by project
 
 plugins {
+    application
     kotlin("jvm") version "2.0.21"
-    id("io.ktor.plugin") version "3.0.0"
-    id("org.jlleitschuh.gradle.ktlint") version "12.1.1" // Apply ktlint plugin
+    kotlin("plugin.serialization").version("2.0.0")
 }
 
 group = "com.example"
-
 version = "0.0.1"
 
 application {
@@ -21,11 +21,14 @@ application {
 repositories { mavenCentral() }
 
 dependencies {
-    implementation("io.ktor:ktor-server-core-jvm")
-    implementation("io.ktor:ktor-server-netty-jvm")
+    implementation("io.ktor:ktor-server-core-jvm:$ktorVersion")
+    implementation("io.ktor:ktor-server-netty-jvm:$ktorVersion")
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
-    implementation("io.ktor:ktor-server-config-yaml")
-    implementation("io.ktor:ktor-server-openapi")
-    testImplementation("io.ktor:ktor-server-test-host-jvm")
+    implementation("io.ktor:ktor-server-config-yaml:$ktorVersion")
+    implementation("io.ktor:ktor-server-openapi:$ktorVersion")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+    implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
+    testImplementation("io.ktor:ktor-server-test-host-jvm:$ktorVersion")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
+    testImplementation("org.testcontainers:postgresql:1.16.0")
 }

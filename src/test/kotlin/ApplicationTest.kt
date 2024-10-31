@@ -15,6 +15,7 @@ class ApplicationTest {
             application { module() }
             val response = client.get("/")
             assertEquals(HttpStatusCode.OK, response.status)
+            assertEquals("text/plain; charset=UTF-8", response.headers["Content-Type"])
             assertEquals("Hello World!\n", response.bodyAsText())
         }
 
