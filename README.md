@@ -7,6 +7,12 @@ This is a simple Ktor project that demonstrates how to create a simple REST API 
 ```zsh
 % ./gradlew build -t
 ```
+
+## Running tests with coverage reporting
+
+```zsh
+% ./gradlew clean koverHtmlReport koverVerify
+```
 ## Running the application
 
 In another terminal, run the following command:

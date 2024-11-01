@@ -10,5 +10,7 @@ class FakeTaskRepository : TaskRepository {
 
     override fun allTasks(): List<Task> = tasks
 
+    override fun taskById(id: String): Task? = tasks.find { it.id.toString() == id }
+
     override fun taskByName(name: String): Task? = tasks.find { it.name.equals(name, ignoreCase = true) }
 }
