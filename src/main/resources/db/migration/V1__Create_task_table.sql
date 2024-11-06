@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS task;
+CREATE TABLE task(id UUID PRIMARY KEY, name VARCHAR(50), description VARCHAR(50), priority VARCHAR(50));

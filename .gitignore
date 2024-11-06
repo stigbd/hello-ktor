@@ -40,3 +40,6 @@ out/
 
 # docs folder should not be included
 docs/
+
+# .zed folder should not be included
+.zed/

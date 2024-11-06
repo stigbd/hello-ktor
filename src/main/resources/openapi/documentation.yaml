@@ -9,6 +9,7 @@ paths:
   /:
     get:
       description: "Root endpoint"
+      operationId: "getRoot"
       responses:
         "200":
           description: "Returns a greeting message"
@@ -19,12 +20,14 @@ paths:
   /liveness:
     get:
       description: "Liveness probe"
+      operationId: "getLiveness"
       responses:
         "200":
           description: "Service is alive"
   /readiness:
     get:
       description: "Readiness probe"
+      operationId: "getReadiness"
       responses:
         "200":
           description: "Service is ready"

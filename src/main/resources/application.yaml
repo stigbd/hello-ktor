@@ -8,3 +8,8 @@ ktor:
   application:
     modules:
       - com.example.ApplicationKt.module
+storage:
+  database: "ktor_tutorial_db"
+  jdbcURL: "jdbc:postgresql://localhost:5432/ktor_tutorial_db"
+  user: "postgres"
+  password: "password"
