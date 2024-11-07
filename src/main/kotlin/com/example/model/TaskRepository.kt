@@ -1,9 +1,13 @@
 package com.example.model
 
+import java.util.UUID
+
 interface TaskRepository {
-    fun allTasks(): List<Task>
+    suspend fun allTasks(): List<Task>
 
-    fun taskById(id: String): Task?
+    suspend fun taskById(id: UUID): Task?
 
-    fun taskByName(name: String): Task?
+    suspend fun tasksByName(name: String): List<Task>
+
+    suspend fun addTask(task: Task): Task
 }

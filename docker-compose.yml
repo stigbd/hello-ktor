@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:17
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ktor_tutorial_db
+  adminer:
+    image: adminer
+    ports:
+      - "8081:8080"

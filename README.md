@@ -14,6 +14,11 @@ This is a simple Ktor project that demonstrates how to create a simple REST API 
 % ./gradlew clean koverHtmlReport koverVerify
 ```
 ## Running the application
+Start database:
+
+```zsh
+% docker-compose up
+```
 
 In another terminal, run the following command:
 
@@ -28,3 +33,7 @@ You can test the application by running the following command:
 ```zsh
 % curl http://localhost:8080
 ```
+
+## References
+
+https://ktor.io/docs/server-integrate-database.html

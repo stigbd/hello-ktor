@@ -9,9 +9,9 @@ import kotlinx.serialization.encoding.Encoder
 import java.util.UUID
 
 enum class Priority {
-    LOW,
-    MEDIUM,
-    HIGH,
+    Low,
+    Medium,
+    High,
 }
 
 object UUIDSerializer : KSerializer<UUID> {
